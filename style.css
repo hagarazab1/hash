@@ -493,7 +493,7 @@ nav {
 .site-footer {
     background-color: transparent;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 51px;
+    margin-top: 50px;
     position: relative;
 }
 
@@ -563,7 +563,7 @@ nav {
 }
 
 .footer-logo-custom {
-    position: static; /* نلغي الـ absolute هنا عشان الفوتر */
+    position: static;
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
@@ -598,7 +598,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, auto);
     gap: 60px;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .link-col {
