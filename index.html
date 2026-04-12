@@ -12,16 +12,16 @@
     <div class="bg-glow"></div>
 
     <nav>
-      <a href="/" class="logo" aria-label="Devory Tech home">
+      <a href="index.html" class="logo" aria-label="Devory Tech home">
       <span class="orange-text">Or</span>vex
       </a>
 
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#">Careers</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#site-footer">Contact Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
       </ul>
 
     </nav>
@@ -35,17 +35,18 @@
 
         <button class="start-project">Start your project</button>
 
-        <!-- Animated Waves for Hero Background -->
+        <!-- Dynamic Sea Waves -->
         <div class="waves-container">
-            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                 <defs>
                     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                 </defs>
                 <g class="parallax">
                     <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(164, 224, 173, 0.7)" />
-                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(164, 224, 173, 0.5)" />
-                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(164, 224, 173, 0.3)" />
-                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#A4E0AD" />
+                    <use xlink:href="#gentle-wave" x="48" y="2" fill="rgba(164, 224, 173, 0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="4" fill="rgba(164, 224, 173, 0.25)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--bg-color)" />
                 </g>
             </svg>
         </div>
@@ -95,6 +96,151 @@
                 </div>
                 <h4>بناء أدوات برمجية</h4>
                 <p>Animated can dervally scale u sonnmaili yor you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Help Business Section -->
+    <section class="help-section">
+        <div class="help-container">
+            <div class="help-header">
+                <h3 class="section-title" style="text-align: left; margin: 0; font-size: 38px; width: auto;">How I Can Help Your Business</h3>
+                <a href="#site-footer" class="get-in-touch-btn">Get in Touch <span class="icon-circle"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></span></a>
+            </div>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <i class="fa-regular fa-window-maximize"></i>
+                        <h4>Website Design & Development</h4>
+                    </div>
+                    <p>Get a unique website built by a hybrid designer-developer. I combine modern aesthetics with robust coding and advanced SEO to create a fast, sales-focused digital experience.</p>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <h4>UI/UX Design</h4>
+                    </div>
+                    <p>Elevate your user experience. I design intuitive, high-converting interfaces for web and mobile apps that strengthen your brand value.</p>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <i class="fa-solid fa-pen-nib"></i>
+                        <h4>Strategic Consultations</h4>
+                    </div>
+                    <p>Get clarity on your next digital move. Whether it's a website audit, a redesign roadmap, or brainstorming custom AI workflows, I provide actionable insights tailored to your goals.</p>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-card-header">
+                        <i class="fa-solid fa-robot"></i>
+                        <h4>AI Automations</h4>
+                    </div>
+                    <p>Streamline your operations. I build custom AI chatbots and smart n8n workflows to automate your marketing and repetitive tasks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section class="tech-stack-section">
+        <h3 class="section-title" style="text-align: left; padding-left: 10%; margin-bottom: 30px;">Technology Stack</h3>
+        
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <!-- Group 1 -->
+                <div class="marquee-group">
+                    <div class="tech-box"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-code"></i><span>Shadcn UI</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="tech-box"><div class="icon-text">TS</div><span>TypeScript</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-react"></i><span>React</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-mobile-screen"></i><span>React Native</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-angle-up"></i><span>Expo</span></div>
+                </div>
+                <!-- Group 2 (Clone for seamless loop) -->
+                <div class="marquee-group" aria-hidden="true">
+                    <div class="tech-box"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-code"></i><span>Shadcn UI</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                    <div class="tech-box"><div class="icon-text">TS</div><span>TypeScript</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-react"></i><span>React</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-mobile-screen"></i><span>React Native</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-angle-up"></i><span>Expo</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="marquee-container" style="margin-top: 30px;">
+            <div class="marquee-content fast">
+                <!-- Group 1 -->
+                <div class="marquee-group">
+                    <div class="tech-box"><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-cubes"></i><span>Prisma</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-droplet"></i><span>Drizzle ORM</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-circle-nodes"></i><span>Convex</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-layer-group"></i><span>Odoo</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-server"></i><span>Express</span></div>
+                    <div class="tech-box"><div class="icon-text">N</div><span>NextJS</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+                </div>
+                <!-- Group 2 (Clone for seamless loop) -->
+                <div class="marquee-group" aria-hidden="true">
+                    <div class="tech-box"><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-cubes"></i><span>Prisma</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-droplet"></i><span>Drizzle ORM</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-circle-nodes"></i><span>Convex</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-layer-group"></i><span>Odoo</span></div>
+                    <div class="tech-box"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-server"></i><span>Express</span></div>
+                    <div class="tech-box"><div class="icon-text">N</div><span>NextJS</span></div>
+                    <div class="tech-box"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Projects Section -->
+    <section class="recent-projects-section" id="projects">
+        <h3 class="section-title">Recent Projects</h3>
+        
+        <div class="project-showcase">
+            <!-- Background Moving Text -->
+            <div class="moving-bg-text-container">
+                <div class="moving-bg-text">
+                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+            
+            <!-- Foreground Project Card -->
+            <div class="project-glass-card">
+                <!-- Inner Image Placeholder -->
+                <div class="project-image-placeholder">
+                    <p style="color: #666; font-size: 16px; font-weight: 500;">[Project Preview Screenshot Goes Here]</p>
+                </div>
+                
+                <div class="project-overlay-info">
+                    <div class="project-brand">hsh PRTNRS</div>
+                    <div class="project-tags">
+                        <span class="tag">Finance</span>
+                        <span class="tag">Design</span>
+                        <span class="tag">Development</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -159,17 +305,16 @@
         </div>
     </section>
 
+
     <footer class="site-footer" id="site-footer">
+        <hr style="border: 1px solid var(--glass-border);">
     <div class="footer-content">
         <div class="footer-brand">
             <a href="/" class="logo footer-logo-custom" aria-label="Orvex Tech home">
                 <span class="orange-text">Or</span>vex
             </a>
-            <p class="about-contact" style="color: var(--text-primary); font-size: 15px; line-height: 1.8;">
-                <i class="fa-solid fa-phone" style="color: var(--accent-purple); margin-right: 8px;"></i> +90123456789<br>
-                <i class="fa-solid fa-envelope" style="color: var(--accent-purple); margin-right: 8px;"></i> emailhash@gmail.com
-            </p>
-            <p class="copyright">© 2026 Orvex Tech. All rights reserved.</p>
+            <p class="copyright"> Copyright © 2026 Orvex Tech<br/>
+                All rights reserved</p>
             
             <div class="social-section">
                 <p class="social-title">FOLLOW US</p>
@@ -184,8 +329,8 @@
 
         <div class="footer-links">
             <div class="link-col">
-                <a href="#">Home</a>
-                <a href="#">Contact Us</a>
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact Us</a>
             </div>
             <div class="link-col">
                 <a href="#">Services</a>
