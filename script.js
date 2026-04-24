@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // --- Global Stars Generation ---
+    const starsContainer = document.createElement('div');
+    starsContainer.classList.add('stars-bg-container');
+    document.body.prepend(starsContainer);
+
+    for (let i = 0; i < 150; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 4}s`;
+        star.style.animationDuration = `${2 + Math.random() * 4}s`;
+        starsContainer.appendChild(star);
+    }
+
     const cards = document.querySelectorAll('.glass-card');
 
     cards.forEach(card => {
@@ -27,23 +42,265 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY === 0) {
-            // At the top
             nav.classList.remove('scrolled');
             nav.classList.remove('hidden');
         } else {
-            // Scrolled out of the top
             nav.classList.add('scrolled');
-            
-            // Check scroll direction
             if (window.scrollY > lastScrollY && window.scrollY > 80) {
-                // Scrolling down and past the threshold
                 nav.classList.add('hidden');
             } else {
-                // Scrolling up
                 nav.classList.remove('hidden');
             }
         }
         lastScrollY = window.scrollY;
     });
+
+    // --- Scroll Reveal Animation Logic ---
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, revealOptions);
+
+    reveals.forEach(reveal => {
+        revealOnScroll.observe(reveal);
+    });
+
+    // --- Portfolio Filtering Logic ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            portfolioItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 400);
+                }
+            });
+        });
+    });
 });
 
+// --- Footer: Dark Cosmic Flowing Fabric Animation ---
+(function () {
+    const canvas = document.getElementById('footer-wave-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let time = 0;
+    let noiseCanvas = null;
+
+    function buildNoiseTexture(w, h) {
+        noiseCanvas = document.createElement('canvas');
+        noiseCanvas.width = w;
+        noiseCanvas.height = h;
+        const nc = noiseCanvas.getContext('2d');
+        const img = nc.createImageData(w, h);
+        for (let i = 0; i < img.data.length; i += 4) {
+            const v = Math.random() * 20;
+            img.data[i]     = v;
+            img.data[i + 1] = v;
+            img.data[i + 2] = v;
+            img.data[i + 3] = 255;
+        }
+        nc.putImageData(img, 0, 0);
+    }
+
+    function resize() {
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        buildNoiseTexture(canvas.width, canvas.height);
+    }
+
+    // Compute wave Y displacement at a given x position
+    function waveDisp(x, w, h, t) {
+        const n = x / w;
+        const a = Math.sin(n * Math.PI * 1.8 + t * 0.20) * h * 0.11;
+        const b = Math.sin(n * Math.PI * 2.9 - t * 0.13) * h * 0.055;
+        const c = Math.sin(n * Math.PI * 4.1 + t * 0.28) * h * 0.028;
+        return a + b + c;
+    }
+
+    // Build spine points across the canvas
+    function buildSpine(w, h, t, res) {
+        const center = h * 0.5;
+        const pts = [];
+        for (let i = 0; i <= res; i++) {
+            const x = (i / res) * w;
+            pts.push({ x, y: center + waveDisp(x, w, h, t) });
+        }
+        return pts;
+    }
+
+    function drawFrame() {
+        const w = canvas.width;
+        const h = canvas.height;
+        const res = 400;
+        const spine = buildSpine(w, h, time, res);
+        const thick = h * 0.44; // total ribbon height
+
+        // ── 1. Void-black base ────────────────────────────────────────
+        ctx.fillStyle = '#010103';
+        ctx.fillRect(0, 0, w, h);
+
+        // ── 2. Subtle grain overlay ───────────────────────────────────
+        if (noiseCanvas) {
+            ctx.globalAlpha = 0.028;
+            ctx.drawImage(noiseCanvas, 0, 0, w, h);
+            ctx.globalAlpha = 1;
+        }
+
+        // ── 3. Ribbon body — deep void with faint depth ───────────────
+        ctx.beginPath();
+        for (let i = 0; i < spine.length; i++) {
+            const p = spine[i];
+            if (i === 0) ctx.moveTo(p.x, p.y - thick * 0.5);
+            else         ctx.lineTo(p.x, p.y - thick * 0.5);
+        }
+        for (let i = spine.length - 1; i >= 0; i--) {
+            ctx.lineTo(spine[i].x, spine[i].y + thick * 0.5);
+        }
+        ctx.closePath();
+        const bodyGrad = ctx.createLinearGradient(0, 0, 0, h);
+        bodyGrad.addColorStop(0,    'rgba(1,1,4,0)');
+        bodyGrad.addColorStop(0.28, 'rgba(5,5,12,0.88)');
+        bodyGrad.addColorStop(0.5,  'rgba(8,8,18,0.96)');
+        bodyGrad.addColorStop(0.72, 'rgba(5,5,12,0.88)');
+        bodyGrad.addColorStop(1,    'rgba(1,1,4,0)');
+        ctx.fillStyle = bodyGrad;
+        ctx.fill();
+
+        // ── 4. Mid-tone satin sheen — wide soft band ──────────────────
+        const sheenWidth = thick * 0.28;
+        ctx.beginPath();
+        for (let i = 0; i < spine.length; i++) {
+            const p = spine[i];
+            if (i === 0) ctx.moveTo(p.x, p.y - sheenWidth);
+            else         ctx.lineTo(p.x, p.y - sheenWidth);
+        }
+        for (let i = spine.length - 1; i >= 0; i--) {
+            ctx.lineTo(spine[i].x, spine[i].y + sheenWidth);
+        }
+        ctx.closePath();
+        const sheenGrad = ctx.createLinearGradient(0, 0, w, 0);
+        sheenGrad.addColorStop(0,    'rgba(140,150,175,0)');
+        sheenGrad.addColorStop(0.12, 'rgba(155,165,190,0.06)');
+        sheenGrad.addColorStop(0.38, 'rgba(175,185,210,0.16)');
+        sheenGrad.addColorStop(0.5,  'rgba(185,195,218,0.20)');
+        sheenGrad.addColorStop(0.62, 'rgba(175,185,210,0.16)');
+        sheenGrad.addColorStop(0.88, 'rgba(155,165,190,0.06)');
+        sheenGrad.addColorStop(1,    'rgba(140,150,175,0)');
+        ctx.fillStyle = sheenGrad;
+        ctx.fill();
+
+        // ── 5. Sharp silvery-white crest highlight ────────────────────
+        const crest = thick * 0.045;
+        ctx.beginPath();
+        for (let i = 0; i < spine.length; i++) {
+            const p = spine[i];
+            if (i === 0) ctx.moveTo(p.x, p.y - crest);
+            else         ctx.lineTo(p.x, p.y - crest);
+        }
+        for (let i = spine.length - 1; i >= 0; i--) {
+            ctx.lineTo(spine[i].x, spine[i].y + crest);
+        }
+        ctx.closePath();
+        const crestGrad = ctx.createLinearGradient(0, 0, w, 0);
+        crestGrad.addColorStop(0,    'rgba(210,218,240,0)');
+        crestGrad.addColorStop(0.18, 'rgba(218,226,248,0.22)');
+        crestGrad.addColorStop(0.40, 'rgba(232,238,255,0.68)');
+        crestGrad.addColorStop(0.50, 'rgba(240,244,255,0.80)');
+        crestGrad.addColorStop(0.60, 'rgba(232,238,255,0.68)');
+        crestGrad.addColorStop(0.82, 'rgba(218,226,248,0.22)');
+        crestGrad.addColorStop(1,    'rgba(210,218,240,0)');
+        ctx.fillStyle = crestGrad;
+        ctx.fill();
+
+        // ── 6. Second ripple — secondary wave, fainter ────────────────
+        const spine2 = buildSpine(w, h, time * 0.7 + 3.14, res);
+        const thick2 = thick * 0.3;
+        ctx.beginPath();
+        for (let i = 0; i < spine2.length; i++) {
+            const p = spine2[i];
+            if (i === 0) ctx.moveTo(p.x, p.y - thick2 * 0.5);
+            else         ctx.lineTo(p.x, p.y - thick2 * 0.5);
+        }
+        for (let i = spine2.length - 1; i >= 0; i--) {
+            ctx.lineTo(spine2[i].x, spine2[i].y + thick2 * 0.5);
+        }
+        ctx.closePath();
+        const body2Grad = ctx.createLinearGradient(0, 0, 0, h);
+        body2Grad.addColorStop(0,   'rgba(3,3,8,0)');
+        body2Grad.addColorStop(0.5, 'rgba(6,6,14,0.6)');
+        body2Grad.addColorStop(1,   'rgba(3,3,8,0)');
+        ctx.fillStyle = body2Grad;
+        ctx.fill();
+
+        // Faint crest on ripple 2
+        const crest2 = thick2 * 0.08;
+        ctx.beginPath();
+        for (let i = 0; i < spine2.length; i++) {
+            const p = spine2[i];
+            if (i === 0) ctx.moveTo(p.x, p.y - crest2);
+            else         ctx.lineTo(p.x, p.y - crest2);
+        }
+        for (let i = spine2.length - 1; i >= 0; i--) {
+            ctx.lineTo(spine2[i].x, spine2[i].y + crest2);
+        }
+        ctx.closePath();
+        const crest2Grad = ctx.createLinearGradient(0, 0, w, 0);
+        crest2Grad.addColorStop(0,   'rgba(190,200,225,0)');
+        crest2Grad.addColorStop(0.3, 'rgba(200,210,235,0.10)');
+        crest2Grad.addColorStop(0.5, 'rgba(210,220,245,0.22)');
+        crest2Grad.addColorStop(0.7, 'rgba(200,210,235,0.10)');
+        crest2Grad.addColorStop(1,   'rgba(190,200,225,0)');
+        ctx.fillStyle = crest2Grad;
+        ctx.fill();
+
+        // ── 7. Top & bottom fade-to-black vignettes ───────────────────
+        const topFade = ctx.createLinearGradient(0, 0, 0, h * 0.32);
+        topFade.addColorStop(0, 'rgba(1,1,3,1)');
+        topFade.addColorStop(1, 'rgba(1,1,3,0)');
+        ctx.fillStyle = topFade;
+        ctx.fillRect(0, 0, w, h * 0.32);
+
+        const botFade = ctx.createLinearGradient(0, h * 0.68, 0, h);
+        botFade.addColorStop(0, 'rgba(1,1,3,0)');
+        botFade.addColorStop(1, 'rgba(1,1,3,1)');
+        ctx.fillStyle = botFade;
+        ctx.fillRect(0, h * 0.68, w, h * 0.32);
+
+        time += 0.004; // glacially slow for the satin effect
+        requestAnimationFrame(drawFrame);
+    }
+
+    resize();
+    window.addEventListener('resize', () => { resize(); });
+    drawFrame();
+})();
