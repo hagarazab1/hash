@@ -9,8 +9,12 @@
     --glass-border: rgba(255, 255, 255, 0.08);
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    height: auto;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 * {
@@ -23,7 +27,6 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
-    overflow-x: hidden;
 }
 
 /* --- Effects and Background --- */
@@ -99,11 +102,14 @@ nav.hidden {
 .hero {
     text-align: center;
     height: 100vh;
+    width: 100vw;
     position: relative;
     overflow: hidden;
     padding-top: 65px;
     background-color: var(--bg-color);
     z-index: 1;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 /* Custom Purple Grid Background for Hero */
@@ -198,8 +204,8 @@ nav.hidden {
 .scroll-down-indicator {
     position: absolute;
     bottom: 37px;
-    left: 124px;
-    width: 80%;
+    left: 174px;
+    width: 76%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -444,9 +450,16 @@ nav.hidden {
 /* --- Work Experience --- */
 .work-experience {
     padding: 80px 10%;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.work-experience h3 { margin-bottom: 30px; }
+.work-experience h3 { margin-bottom: 10px; }
 
 .cards-grid {
     display: grid;
@@ -500,10 +513,17 @@ nav.hidden {
 
 /* --- Services Section --- */
 .services-section {
-    padding: 100px 10%;
+    padding: 60px 10%;
     text-align: center;
     position: relative;
     z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .section-subtitle {
     color: var(--text-secondary);
@@ -715,9 +735,10 @@ nav.hidden {
 
 /* --- Features Grid Section --- */
 .features-grid-section {
-    padding: 20px 10%;
+    padding: 100px 10%;
     position: relative;
     z-index: 5;
+    background: transparent;
 }
 
 .features-layout {
@@ -871,6 +892,13 @@ nav.hidden {
     padding: 80px 10%;
     position: relative;
     z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .help-container {
@@ -991,6 +1019,13 @@ nav.hidden {
     overflow: hidden;
     position: relative;
     z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .marquee-container {
@@ -1077,20 +1112,17 @@ nav.hidden {
 
 /* --- Recent Projects Section --- */
 .recent-projects-section {
-    padding: 80px 0;
+    padding: 70px 0;
     position: relative;
     overflow: hidden;
     z-index: 5;
-}
-
-.recent-projects-section .section-title {
-    margin-bottom: 20px;
+    background: transparent;
 }
 
 .project-showcase {
     position: relative;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1134,26 +1166,37 @@ nav.hidden {
     z-index: 2; /* In front of scrolling text */
     width: 65%;
     max-width: 900px;
+    border-radius: 20px;
+    /* Static container prevents flicker during hover transform */
+}
+
+.project-card-inner {
+    width: 100%;
+    height: 100%;
     background: #e2e1e0; /* To represent the website screenshot base */
     border: 1px none rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.6s ease;
 }
 
-.project-glass-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 40px 50px rgba(164, 224, 173, 0.2);
+.project-glass-card:hover .project-card-inner {
+    transform: translateY(-12px) scale(1.01);
+    box-shadow: 0 35px 60px -10px rgba(83, 60, 46, 0.6);
 }
 
 .project-image-placeholder {
     width: 100%;
     height: 480px;
-    background: radial-gradient(circle, #242a1e 0%, #dcdcdc 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .project-overlay-info {
@@ -1196,6 +1239,13 @@ nav.hidden {
     padding: 100px 10%;
     position: relative;
     z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .about-container {
@@ -1324,7 +1374,7 @@ nav.hidden {
 /* --- Footer --- */
 .site-footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 50px;
+    margin-top: 0;
     position: relative;
     background: var(--bg-color);
     overflow: hidden;
@@ -1481,21 +1531,21 @@ nav.hidden {
 /* --- Scroll Reveal Animation --- */
 .reveal {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
+    transition: opacity 1s ease-out;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* --- Case Studies Section --- */
+/* --- New Portfolio Section Redesign --- */
 .portfolio-section {
-    padding: 100px 0;
+    padding: 100px 5%;
     background: transparent;
+    position: relative;
+    z-index: 5;
 }
-
 .portfolio-subtitle {
     display: block;
     text-align: center;
@@ -1506,98 +1556,185 @@ nav.hidden {
     margin-bottom: 10px;
     font-weight: 600;
 }
-
-.portfolio-main-title {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 50px;
-    color: #fff;
-    font-weight: 700;
-}
-
-.portfolio-filters {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
-}
-
-.filter-btn {
-    padding: 12px 28px;
-    border-radius: 50px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #fff;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.filter-btn.active {
-    background: var(--accent-purple);
-    color: #000;
-    border-color: var(--accent-purple);
-    font-weight: 600;
-    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
-}
-
-.filter-btn:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-}
-
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
+    gap: 12px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .portfolio-item {
     position: relative;
-    border-radius: 30px;
+    border-radius: 8px;
     overflow: hidden;
-    aspect-ratio: 4/5;
-    background: #111;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    aspect-ratio: 1 / 1;
+    background: #000;
 }
 
-.portfolio-img {
+.portfolio-item img,
+.portfolio-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease, opacity 0.6s ease;
+    opacity: 0.9;
 }
 
-.portfolio-item:hover .portfolio-img {
-    transform: scale(1.1);
+.portfolio-item:hover img,
+.portfolio-item:hover video {
+    transform: scale(1.05);
+    opacity: 1;
 }
 
-.portfolio-overlay {
+/* Darkened effect for specific items */
+.darkened-item img,
+.darkened-item video {
+    filter: grayscale(100%) brightness(0.5);
+}
+
+.darkened-item:hover img,
+.darkened-item:hover video {
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Tall items matching the image layout */
+.portfolio-item.tall {
+    grid-row: span 1;
+    aspect-ratio: 1 / 1.3;
+}
+
+.portfolio-item.tall-bottom {
+    grid-row: span 1;
+    aspect-ratio: 1 / 1.3;
+    margin-top: -30%; /* Offset to create the staggered effect */
+}
+
+/* Adjusted grid alignment to match image better */
+.portfolio-grid .portfolio-item:nth-child(2) {
+    /* grid-row: span 2; */
+    aspect-ratio: auto;
+    height: 111%;
+    margin-top: -49px;
+}
+
+.portfolio-grid .portfolio-item:nth-child(5) {
+    /* Middle item is square */
+}
+
+.portfolio-grid .portfolio-item:nth-child(8) {
+    grid-row: span 2;
+    aspect-ratio: auto;
+    height: 105%;
+    margin-top: 0;
+}
+/* View Case Study Button */
+.view-case-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 60px;
+    right: 60px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.view-case-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    opacity: 1;
+}
+
+.view-case-btn i {
+    font-size: 12px;
+}
+
+/* Portfolio Footer Navigation */
+.portfolio-footer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.all-projects-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.all-projects-link::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 30px;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
+    height: 1.5px;
+    background: #fff;
+    transition: width 0.3s ease;
 }
 
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
-    transform: translateY(0);
+.all-projects-link:hover::after {
+    width: 70%;
 }
 
-.portfolio-overlay h3 {
-    font-size: 1.5rem;
+.book-call-btn {
+    background: #966591c7;
     color: #fff;
-    margin-bottom: 5px;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.book-call-btn:hover {
+    /* background: #ffffff8a; */
+    color: var(--bg-color);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .portfolio-grid .portfolio-item:nth-child(2),
+    .portfolio-grid .portfolio-item:nth-child(8) {
+        grid-row: span 1;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-footer {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .portfolio-overlay p {

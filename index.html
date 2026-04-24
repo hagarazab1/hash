@@ -11,6 +11,7 @@
 <body>
     <div class="bg-glow"></div>
 
+    <!-- Navigation -->
     <nav>
       <a href="index.html" class="logo" aria-label="Devory Tech home">
       <span class="orange-text">Or</span>vex
@@ -21,7 +22,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Our Work</a></li>
         <li><a href="#about">About Us</a></li>
-        <li class="nav-contact"><a href="contact.html">Contact Us</a></li>
+        <li class="nav-contact"><a href="pages/contact-us/index.html">Contact Us</a></li>
       </ul>
 
     </nav>
@@ -35,506 +36,517 @@
 
         <div class="hero-drawing-container">
             <svg viewBox="0 0 600 250" class="team-drawing" xmlns="http://www.w3.org/2000/svg">
-              <!-- Static People -->
-              <g class="people-group" stroke="var(--accent-purple)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                <!-- Person 1 (Far Left) - sitting -->
-                <path d="M 60 170 C 50 150, 90 145, 90 170 C 90 190, 60 190, 60 170 Z" />
-                <circle cx="75" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <circle cx="85" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <path d="M 78 175 Q 82 180, 86 175" />
-                <path d="M 75 185 C 80 220, 50 230, 40 240 M 75 185 C 90 200, 100 220, 95 240 M 100 240 C 110 230, 130 230, 140 240" />
+                <!-- Static People -->
+                <g class="people-group" stroke="var(--accent-purple)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <!-- Person 1 (Far Left) - sitting -->
+                    <path d="M 60 170 C 50 150, 90 145, 90 170 C 90 190, 60 190, 60 170 Z" />
+                    <circle cx="75" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <circle cx="85" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <path d="M 78 175 Q 82 180, 86 175" />
+                    <path d="M 75 185 C 80 220, 50 230, 40 240 M 75 185 C 90 200, 100 220, 95 240 M 100 240 C 110 230, 130 230, 140 240" />
 
-                <!-- Person 2 (Pointing up) - back turned -->
-                <path d="M 160 185 C 150 160, 190 160, 185 185 C 180 205, 160 200, 160 185 Z" />
-                <path d="M 175 200 C 140 210, 140 240, 150 240 M 175 200 C 200 210, 210 240, 200 240" />
-                <path d="M 150 240 C 170 235, 190 235, 200 240" />
-                <path d="M 195 210 Q 210 180, 215 140" />
+                    <!-- Person 2 (Pointing up) - back turned -->
+                    <path d="M 160 185 C 150 160, 190 160, 185 185 C 180 205, 160 200, 160 185 Z" />
+                    <path d="M 175 200 C 140 210, 140 240, 150 240 M 175 200 C 200 210, 210 240, 200 240" />
+                    <path d="M 150 240 C 170 235, 190 235, 200 240" />
+                    <path d="M 195 210 Q 210 180, 215 140" />
 
-                <!-- Person 3 (Center) - large front face, looking up -->
-                <path d="M 280 170 C 270 140, 310 140, 315 170 C 315 195, 280 195, 280 170 Z" />
-                <circle cx="290" cy="160" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <circle cx="305" cy="160" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <path d="M 295 175 Q 300 185, 305 175" />
-                <path d="M 297 190 C 275 205, 250 230, 260 250 L 320 250 C 340 230, 315 205, 297 190 Z" />
-                
-                <!-- Person 4 -->
-                <path d="M 400 175 C 390 150, 420 150, 425 175 C 425 195, 400 200, 400 175 Z" />
-                <circle cx="410" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <circle cx="420" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <path d="M 412 190 C 395 210, 395 240, 410 240 M 412 190 C 425 210, 435 240, 430 240" />
-                <path d="M 430 230 L 450 210 L 480 230 M 420 240 L 440 220 L 470 240" />
+                    <!-- Person 3 (Center) - large front face, looking up -->
+                    <path d="M 280 170 C 270 140, 310 140, 315 170 C 315 195, 280 195, 280 170 Z" />
+                    <circle cx="290" cy="160" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <circle cx="305" cy="160" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <path d="M 295 175 Q 300 185, 305 175" />
+                    <path d="M 297 190 C 275 205, 250 230, 260 250 L 320 250 C 340 230, 315 205, 297 190 Z" />
+                    
+                    <!-- Person 4 -->
+                    <path d="M 400 175 C 390 150, 420 150, 425 175 C 425 195, 400 200, 400 175 Z" />
+                    <circle cx="410" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <circle cx="420" cy="165" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <path d="M 412 190 C 395 210, 395 240, 410 240 M 412 190 C 425 210, 435 240, 430 240" />
+                    <path d="M 430 230 L 450 210 L 480 230 M 420 240 L 440 220 L 470 240" />
 
-                <!-- Person 5 (Far Right) -->
-                <path d="M 490 160 C 480 135, 520 135, 520 160 C 520 185, 490 185, 490 160 Z" />
-                <circle cx="500" cy="150" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <circle cx="510" cy="150" r="1.5" fill="var(--accent-purple)" stroke="none" />
-                <path d="M 505 180 C 485 200, 490 230, 500 240 M 505 180 C 520 200, 535 230, 530 240" />
-                <path d="M 530 230 L 560 210 L 580 240" />
-              </g>
-
-              <!-- Animated Circle (Oval Speech Bubble - drawn independently to stem from checkmark) -->
-              <path class="drawing-bubble" d="M 225 110 C 250 115, 300 135, 400 130 C 550 120, 570 60, 500 40 C 400 20, 150 20, 100 40 C 30 60, 40 120, 150 130 C 170 130, 190 128, 205 125" fill="none" stroke="var(--accent-purple)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
-
-              <!-- Animated Arrows -->
-              <g class="drawing-arrows" fill="none" stroke="var(--accent-purple)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Checkmark for Person 2 (acts as the tail of the bubble) -->
-                <g class="arr-check">
-                  <path d="M 205 125 L 212 135 L 225 110" stroke-width="4.5" style="stroke-dasharray: 100; stroke-dashoffset: 100;" />
+                    <!-- Person 5 (Far Right) -->
+                    <path d="M 490 160 C 480 135, 520 135, 520 160 C 520 185, 490 185, 490 160 Z" />
+                    <circle cx="500" cy="150" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <circle cx="510" cy="150" r="1.5" fill="var(--accent-purple)" stroke="none" />
+                    <path d="M 505 180 C 485 200, 490 230, 500 240 M 505 180 C 520 200, 535 230, 530 240" />
+                    <path d="M 530 230 L 560 210 L 580 240" />
                 </g>
 
-                <g class="arr1">
-                  <path d="M 90 140 Q 120 90, 110 50" />
-                  <circle cx="110" cy="50" r="4" fill="var(--accent-purple)" stroke="none" />
-                </g>
+                <!-- Animated Circle (Oval Speech Bubble - drawn independently to stem from checkmark) -->
+                <path class="drawing-bubble" d="M 225 110 C 250 115, 300 135, 400 130 C 550 120, 570 60, 500 40 C 400 20, 150 20, 100 40 C 30 60, 40 120, 150 130 C 170 130, 190 128, 205 125" fill="none" stroke="var(--accent-purple)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
 
-                <g class="arr2">
-                  <path d="M 315 135 Q 330 90, 320 60" />
-                  <circle cx="320" cy="60" r="4" fill="var(--accent-purple)" stroke="none" />
-                </g>
+                <!-- Animated Arrows -->
+                <g class="drawing-arrows" fill="none" stroke="var(--accent-purple)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Checkmark for Person 2 (acts as the tail of the bubble) -->
+                    <g class="arr-check">
+                      <path d="M 205 125 L 212 135 L 225 110" stroke-width="4.5" style="stroke-dasharray: 100; stroke-dashoffset: 100;" />
+                    </g>
 
-                <g class="arr3">
-                  <path d="M 400 145 Q 380 90, 400 70" />
-                  <circle cx="400" cy="70" r="4" fill="var(--accent-purple)" stroke="none" />
+                    <g class="arr1">
+                      <path d="M 90 140 Q 120 90, 110 50" />
+                      <circle cx="110" cy="50" r="4" fill="var(--accent-purple)" stroke="none" />
+                    </g>
+
+                    <g class="arr2">
+                      <path d="M 315 135 Q 330 90, 320 60" />
+                      <circle cx="320" cy="60" r="4" fill="var(--accent-purple)" stroke="none" />
+                    </g>
+
+                    <g class="arr3">
+                      <path d="M 400 145 Q 380 90, 400 70" />
+                      <circle cx="400" cy="70" r="4" fill="var(--accent-purple)" stroke="none" />
+                    </g>
+                    
+                    <g class="arr4">
+                      <path d="M 490 130 Q 460 70, 490 50" />
+                      <circle cx="490" cy="50" r="4" fill="var(--accent-purple)" stroke="none" />
+                    </g>
                 </g>
-                
-                <g class="arr4">
-                  <path d="M 490 130 Q 460 70, 490 50" />
-                  <circle cx="490" cy="50" r="4" fill="var(--accent-purple)" stroke="none" />
-                </g>
-              </g>
             </svg>
         </div>
 
-        <div class="hero-bottom-info">
-            <div class="hero-info-left hero-bottom-text">
-                Visual Designer<br>
-                Based in Istanbul
+            <div class="hero-bottom-info">
+                <div class="hero-info-left hero-bottom-text">
+                    Visual Designer<br>
+                    Based in Istanbul
+                </div>
+                <div class="hero-info-right hero-bottom-text">
+                    Creating<br>
+                    Experiences
+                </div>
             </div>
-            <div class="hero-info-right hero-bottom-text">
-                Creating<br>
-                Experiences
-            </div>
-        </div>
 
-        <div class="scroll-down-indicator">
-            <span class="scroll-label">Scroll down</span>
-            <div class="scroll-dash"></div>
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
+            <div class="scroll-down-indicator">
+                <span class="scroll-label">Scroll down</span>
+                <div class="scroll-dash"></div>
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <div class="scroll-dash"></div>
+                <span class="scroll-label">to see projects</span>
             </div>
-            <div class="scroll-dash"></div>
-            <span class="scroll-label">to see projects</span>
-        </div>
     </header>
 
         <!-- Services Section -->
-    <section class="services-section reveal" id="services">
-        <span class="section-subtitle">What We Do</span>
-        <h3 class="section-title">Our Expertise</h3>
-        <div class="services-carousel">
-            <!-- Left Card -->
-            <div class="service-card side-card card--one">
-                <div class="service-icon">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
+        <section class="services-section reveal" id="services">
+            <span class="section-subtitle">What We Do</span>
+            <h3 class="section-title">Our Expertise</h3>
+            <div class="services-carousel">
+                <!-- Left Card -->
+                <div class="service-card side-card card--one">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h4>Maintenance & Support</h4>
+                    <p>Ongoing updates, security patches, and performance optimization to keep your digital presence reliable and secure.</p>
                 </div>
-                <h4>Maintenance & Support</h4>
-                <p>Ongoing updates, security patches, and performance optimization to keep your digital presence reliable and secure.</p>
-            </div>
 
-            <!-- Center Card -->
-            <div class="service-card center-card card--two">
-                  <div class="service-icon">
-                    <i class="fa-solid fa-laptop-code"></i>
+                <!-- Center Card -->
+                <div class="service-card center-card card--two">
+                      <div class="service-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4>Web Development</h4>
+                    <p>Corporate sites, Shopify stores, and custom web applications built for speed and scalability.</p>
                 </div>
-                <h4>Web Development</h4>
-                <p>Corporate sites, Shopify stores, and custom web applications built for speed and scalability.</p>
-            </div>
 
-            <!-- Right Card -->
-            <div class="service-card side-card card--three">
-                <div class="service-icon">
-                    <i class="fa-solid fa-code"></i>
+                <!-- Right Card -->
+                <div class="service-card side-card card--three">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4>Mobile Development</h4>
+                    <p>Custom iOS and Android apps that deliver seamless user experiences and drive engagement.</p>
                 </div>
-                <h4>Mobile Development</h4>
-                <p>Custom iOS and Android apps that deliver seamless user experiences and drive engagement.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Help Business Section -->
-    <section class="help-section reveal">
-        <div class="help-container">
-            <div class="help-header">
-                <h3 class="section-title" style="text-align: left; margin: 0; font-size: 38px; width: auto;">How I Can Help Your Business</h3>
-                <a href="contact.html" target="_blank" class="get-in-touch-btn">Get in Touch <span class="icon-circle"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></span></a>
+        <!-- Help Business Section -->
+        <section class="help-section reveal">
+            <div class="help-container">
+                <div class="help-header">
+                    <h3 class="section-title" style="text-align: left; margin: 0; font-size: 38px; width: auto;">How I Can Help Your Business</h3>
+                    <a href="pages/contact-us/index.html" target="_blank" class="get-in-touch-btn">Get in Touch <span class="icon-circle"><i class="fa-solid fa-arrow-up" style="transform: rotate(45deg);"></i></span></a>
+                </div>
+                
+                <div class="help-grid">
+                    <div class="help-card">
+                        <div class="help-card-header">
+                            <i class="fa-regular fa-window-maximize"></i>
+                            <h4>Website Design & Development</h4>
+                        </div>
+                        <p>Get a unique website built by a hybrid designer-developer. I combine modern aesthetics with robust coding and advanced SEO to create a fast, sales-focused digital experience.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-card-header">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <h4>UI/UX Design</h4>
+                        </div>
+                        <p>Elevate your user experience. I design intuitive, high-converting interfaces for web and mobile apps that strengthen your brand value.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-card-header">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <h4>Strategic Consultations</h4>
+                        </div>
+                        <p>Get clarity on your next digital move. Whether it's a website audit, a redesign roadmap, or brainstorming custom AI workflows, I provide actionable insights tailored to your goals.</p>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-card-header">
+                            <i class="fa-solid fa-robot"></i>
+                            <h4>AI Automations</h4>
+                        </div>
+                        <p>Streamline your operations. I build custom AI chatbots and smart n8n workflows to automate your marketing and repetitive tasks.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Technology Stack Section -->
+        <section class="tech-stack-section reveal">
+            <h3 class="section-title" style="text-align: left; padding-left: 10%; margin-bottom: 30px;">Technology Stack</h3>
             
-            <div class="help-grid">
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <i class="fa-regular fa-window-maximize"></i>
-                        <h4>Website Design & Development</h4>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <!-- Group 1 -->
+                    <div class="marquee-group">
+                        <div class="tech-box"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-code"></i><span>Shadcn UI</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                        <div class="tech-box"><div class="icon-text">TS</div><span>TypeScript</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-react"></i><span>React</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-mobile-screen"></i><span>React Native</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-angle-up"></i><span>Expo</span></div>
                     </div>
-                    <p>Get a unique website built by a hybrid designer-developer. I combine modern aesthetics with robust coding and advanced SEO to create a fast, sales-focused digital experience.</p>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                        <h4>UI/UX Design</h4>
-                    </div>
-                    <p>Elevate your user experience. I design intuitive, high-converting interfaces for web and mobile apps that strengthen your brand value.</p>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <i class="fa-solid fa-pen-nib"></i>
-                        <h4>Strategic Consultations</h4>
-                    </div>
-                    <p>Get clarity on your next digital move. Whether it's a website audit, a redesign roadmap, or brainstorming custom AI workflows, I provide actionable insights tailored to your goals.</p>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-card-header">
-                        <i class="fa-solid fa-robot"></i>
-                        <h4>AI Automations</h4>
-                    </div>
-                    <p>Streamline your operations. I build custom AI chatbots and smart n8n workflows to automate your marketing and repetitive tasks.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <!-- Technology Stack Section -->
-    <section class="tech-stack-section reveal">
-        <h3 class="section-title" style="text-align: left; padding-left: 10%; margin-bottom: 30px;">Technology Stack</h3>
-        
-        <div class="marquee-container">
-            <div class="marquee-content">
-                <!-- Group 1 -->
-                <div class="marquee-group">
-                    <div class="tech-box"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-code"></i><span>Shadcn UI</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-                    <div class="tech-box"><div class="icon-text">TS</div><span>TypeScript</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-react"></i><span>React</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-mobile-screen"></i><span>React Native</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-angle-up"></i><span>Expo</span></div>
-                </div>
-                <!-- Group 2 (Clone for seamless loop) -->
-                <div class="marquee-group" aria-hidden="true">
-                    <div class="tech-box"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-code"></i><span>Shadcn UI</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-                    <div class="tech-box"><div class="icon-text">TS</div><span>TypeScript</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-react"></i><span>React</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-mobile-screen"></i><span>React Native</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-angle-up"></i><span>Expo</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="marquee-container" style="margin-top: 30px;">
-            <div class="marquee-content fast">
-                <!-- Group 1 -->
-                <div class="marquee-group">
-                    <div class="tech-box"><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-cubes"></i><span>Prisma</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-droplet"></i><span>Drizzle ORM</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-circle-nodes"></i><span>Convex</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-python"></i><span>Python</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-layer-group"></i><span>Odoo</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-server"></i><span>Express</span></div>
-                    <div class="tech-box"><div class="icon-text">N</div><span>NextJS</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
-                </div>
-                <!-- Group 2 (Clone for seamless loop) -->
-                <div class="marquee-group" aria-hidden="true">
-                    <div class="tech-box"><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-cubes"></i><span>Prisma</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-droplet"></i><span>Drizzle ORM</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-circle-nodes"></i><span>Convex</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-python"></i><span>Python</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-layer-group"></i><span>Odoo</span></div>
-                    <div class="tech-box"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-server"></i><span>Express</span></div>
-                    <div class="tech-box"><div class="icon-text">N</div><span>NextJS</span></div>
-                    <div class="tech-box"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recent Projects Section -->
-    <section class="recent-projects-section reveal" id="projects">
-        <span class="portfolio-subtitle">EXCELLENCE IN MOTION</span>
-        <h3 class="section-title">Recent Projects</h3>
-        
-        <div class="project-showcase">
-            <!-- Background Moving Text -->
-            <div class="moving-bg-text-container">
-                <div class="moving-bg-text">
-                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                    <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                </div>
-            </div>
-            
-            <!-- Foreground Project Card -->
-            <div class="project-glass-card">
-                <!-- Inner Image Placeholder -->
-                <div class="project-image-placeholder">
-                    <p style="color: #666; font-size: 16px; font-weight: 500;">[Project Preview Screenshot Goes Here]</p>
-                </div>
-                
-                <div class="project-overlay-info">
-                    <div class="project-brand">hsh PRTNRS</div>
-                    <div class="project-tags">
-                        <span class="tag">Finance</span>
-                        <span class="tag">Design</span>
-                        <span class="tag">Development</span>
+                    <!-- Group 2 (Clone for seamless loop) -->
+                    <div class="marquee-group" aria-hidden="true">
+                        <div class="tech-box"><i class="fa-brands fa-bootstrap"></i><span>Bootstrap</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-code"></i><span>Shadcn UI</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                        <div class="tech-box"><div class="icon-text">TS</div><span>TypeScript</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-react"></i><span>React</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-mobile-screen"></i><span>React Native</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-angle-up"></i><span>Expo</span></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Anchor for Case Studies Section -->
-    <div id="recent-projects-section"></div>
+            <div class="marquee-container" style="margin-top: 30px;">
+                <div class="marquee-content fast">
+                    <!-- Group 1 -->
+                    <div class="marquee-group">
+                        <div class="tech-box"><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-cubes"></i><span>Prisma</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-droplet"></i><span>Drizzle ORM</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-circle-nodes"></i><span>Convex</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-layer-group"></i><span>Odoo</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-server"></i><span>Express</span></div>
+                        <div class="tech-box"><div class="icon-text">N</div><span>NextJS</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+                    </div>
+                    <!-- Group 2 (Clone for seamless loop) -->
+                    <div class="marquee-group" aria-hidden="true">
+                        <div class="tech-box"><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-cubes"></i><span>Prisma</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-droplet"></i><span>Drizzle ORM</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-circle-nodes"></i><span>Convex</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-python"></i><span>Python</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-layer-group"></i><span>Odoo</span></div>
+                        <div class="tech-box"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-server"></i><span>Express</span></div>
+                        <div class="tech-box"><div class="icon-text">N</div><span>NextJS</span></div>
+                        <div class="tech-box"><i class="fa-solid fa-database"></i><span>PostgreSQL</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Case Studies Section -->
-    <section id="portfolio" class="portfolio-section reveal">
-        <div class="container">
+        <!-- Recent Project Section -->
+        <section class="recent-projects-section reveal" id="projects">
             <span class="portfolio-subtitle">EXCELLENCE IN MOTION</span>
-            <h2 class="portfolio-main-title">Case Studies</h2>
-
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">All Work</button>
-                <button class="filter-btn" data-filter="web">Websites</button>
-                <button class="filter-btn" data-filter="app">Mobile Apps</button>
-                <button class="filter-btn" data-filter="design">UI/UX Design</button>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Project 1: iPhone -->
-                <div class="portfolio-item reveal" data-category="app">
-                    <img src="assets/Music player mobile app.jpg" alt="Mobile Experience" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Mobile App Dev</h3>
-                        <p>iOS & Android Solutions</p>
+            <h3 class="section-title">Recent Project</h3>
+            
+            <div class="project-showcase">
+                <!-- Background Moving Text -->
+                <div class="moving-bg-text-container">
+                    <div class="moving-bg-text">
+                        <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span>hsh PRTNRS&nbsp;&nbsp;&nbsp;&nbsp;</span>
                     </div>
                 </div>
-                <!-- Project 2: Laptop -->
-                <div class="portfolio-item reveal" data-category="web">
-                    <img src="assets/Dash_Tail UI Concept.jpg" alt="Web Dashboard" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>Web Analytics</h3>
-                        <p>Enterprise Platforms</p>
-                    </div>
-                </div>
-                <!-- Project 3: Shopping Cart -->
-                <div class="portfolio-item reveal" data-category="design">
-                    <img src="assets/Traflo Website.jpg" alt="E-commerce Design" class="portfolio-img">
-                    <div class="portfolio-overlay">
-                        <h3>E-commerce UI</h3>
-                        <p>User-Centric Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="about-section reveal" id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h3 class="section-title" style="text-align: left; margin-bottom: 30px;">About Us</h3>
-                <p class="about-bio">
-                    A self-taught <span class="orange-text">UI/UX designer</span> and Software Engineer, functioning in the industry for 3+ years now.<br><br>
-                    We make meaningful and delightful digital products that create an equilibrium between user needs and business goals. Our approach combines aesthetic design with robust software engineering to deliver scalable and modern web experiences.
-                </p>
                 
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <h4 class="stat-number">3+</h4>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4 class="stat-number">20+</h4>
-                        <p>Projects Done</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4 class="stat-number">100%</h4>
-                        <p>Satisfaction</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-visual">
-                <div class="about-glass-frame">
-                    <div class="about-abstract-shape primary"></div>
-                    <div class="about-abstract-shape secondary"></div>
-                    <div class="about-photo-placeholder">
-                        <i class="fa-solid fa-user-astronaut"></i>
+                <!-- Foreground Project Card -->
+                <div class="project-glass-card">
+                    <div class="project-card-inner">
+                        <!-- Inner Image Placeholder -->
+                        <div class="project-image-placeholder">
+                            <img src="assets/images/website-1.jpg" alt="Project Preview" class="project-image">
+                        </div>
+                        
+                        <div class="project-overlay-info">
+                            <div class="project-brand">hsh PRTNRS</div>
+                            <div class="project-tags">
+                                <span class="tag">Finance</span>
+                                <span class="tag">Design</span>
+                                <span class="tag">Development</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="work-experience reveal">
-        <h3>Work Experience</h3>
-        <div class="cards-grid">
-            <div class="glass-card">
-                <div class="card-icon">🌟</div>
-                <div class="card-content">
-                    <h4>CIB on the Mobile</h4>
-                    <p>Take your client onboard seamlessly by our amazing tool of digital onboard process.</p>
-                    <button class="learn-more">LEARN MORE</button>
+        <!-- Case Studies Section -->
+        <section id="portfolio" class="portfolio-section reveal">
+            <div class="portfolio-grid">
+                <!-- Item 1 -->
+                <div class="portfolio-item">
+                    <video src="assets/videos/Video Project 1.mp4" autoplay loop muted playsinline alt="Portfolio Item 1"></video>
                 </div>
-            </div>
-            <div class="glass-card">
-                <div class="card-icon">💡</div>
-                <div class="card-content">
-                    <h4>CIB on the Mobile</h4>
-                    <p>Take your client onboard seamlessly by our amazing tool of digital onboard process.</p>
-                    <button class="learn-more">LEARN MORE</button>
+                <!-- Item 2 -->
+                <div class="portfolio-item tall darkened-item">
+                    <img src="assets/images/web2.jpg" alt="Portfolio Item 2">
+                    <button class="view-case-btn">View Casestudy <i class="fa-solid fa-arrow-up-right"></i></button>
                 </div>
-            </div>
-        </div>
-    </section>
+                <!-- Item 3 -->
+                <div class="portfolio-item">
+                    <video src="assets/videos/From KlickPin CF WEBSITE UI_UX DESIGN [Video] _ Web design Portfolio web design Ux design - Pin-703756180534411.mp4" autoplay loop muted playsinline alt="Portfolio Item 3"></video>
+                </div>
+                <!-- Item 4 -->
+                <div class="portfolio-item darkened-item">
+                    <img src="assets/images/app1.jpg" alt="Portfolio Item 4">
+                    <button class="view-case-btn">View Casestudy <i class="fa-solid fa-arrow-up-right"></i></button>
+                </div>
+                <!-- Item 5 -->
+                <div class="portfolio-item">
+                    <video src="assets/videos/video5.mp4" autoplay loop muted playsinline alt="Portfolio Item 5"></video>
+                </div>
+                <!-- Item 6 -->
+                <div class="portfolio-item darkened-item">
+                    <img src="assets/images/app2.jpg" alt="Portfolio Item 6">
+                    <button class="view-case-btn">View Casestudy <i class="fa-solid fa-arrow-up-right"></i></button>
+                </div>
+                <!-- Item 7 -->
+                <div class="portfolio-item img7">
+                    <video src="assets/videos/From KlickPin CF WEBSITE UI_UX DESIGN [Video] _ Web design Portfolio web design Ux design - Pin-703756180534411.mp4" autoplay loop muted playsinline alt="Portfolio Item 3"></video>
+                </div>
+                <!-- Item 8 -->
+                <div class="portfolio-item tall-bottom darkened-item">
+                    <img src="assets/images/app4.jpg" alt="Portfolio Item 8">
+                    <button class="view-case-btn">View Casestudy <i class="fa-solid fa-arrow-up-right"></i></button>
+                </div>
+                <!-- Item 9 -->
+                <div class="portfolio-item">
+                    <video src="assets/videos/Video Project 1.mp4" autoplay loop muted playsinline alt="Portfolio Item 1"></video>
+                </div>
 
- <!-- Features Grid Section -->
-    <section class="features-grid-section reveal">
-        <div class="features-layout">
-            
-            <!-- Card 1: Services -->
-            <div class="feature-b-card">
-                <div class="feature-b-top col-stack">
-                    <div class="inner-feature-box">
-                        <h5>Meta Tags Optimization<span style="color:var(--text-secondary)">-</span></h5>
-                        <p>Optimizing title tags, meta descriptions, and header tags with relevant keywords helps search engines understand your content and improves click-through rates.</p>
-                    </div>
-                    <div class="inner-feature-box">
-                        <h5>Responsive Design<span style="color:var(--text-secondary)">-</span></h5>
-                        <p>Ensuring the site is mobile-friendly and adapts to all screen sizes, which is a critical factor for SEO and user satisfaction.</p>
-                    </div>
-                </div>
-                <div class="feature-b-bottom">
-                    <h4>Services</h4>
-                    <p>developing professional responsive websites,<br>Landing pages, and web applications.</p>
-                </div>
             </div>
 
-            <!-- Card 2: Converting -->
-            <div class="feature-b-card">
-                <div class="feature-b-top feature-diagram">
-                    <svg class="diagram-lines" viewBox="0 0 300 200" preserveAspectRatio="none">
-                        <!-- Path from User to Figma -->
-                        <path d="M 50 100 C 100 100, 100 100, 150 100" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
-                        <!-- Paths from Figma to technologies -->
-                        <path d="M 150 100 C 200 100, 200 40, 250 40" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
-                        <path d="M 150 100 C 200 100, 200 80, 250 80" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
-                        <path d="M 150 100 C 200 100, 200 120, 250 120" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
-                        <path d="M 150 100 C 200 100, 200 160, 250 160" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
-                    </svg>
+            <div class="portfolio-footer">
+                <a href="pages/all Projects/index.html" class="all-projects-link" target="_blank">All Projects</a>
+                <a href="pages/contact-us/index.html" class="book-call-btn" target="_blank">Book a Free Call</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="about-section reveal" id="about">
+            <div class="about-container">
+                <div class="about-content">
+                    <h3 class="section-title" style="text-align: left; margin-bottom: 30px;">About Us</h3>
+                    <p class="about-bio">
+                        A self-taught <span class="orange-text">UI/UX designer</span> and Software Engineer, functioning in the industry for 3+ years now.<br><br>
+                        We make meaningful and delightful digital products that create an equilibrium between user needs and business goals. Our approach combines aesthetic design with robust software engineering to deliver scalable and modern web experiences.
+                    </p>
                     
-                    <div class="diagram-node node-user">
-                        <i class="fa-regular fa-user"></i>
-                    </div>
-                    
-                    <div class="diagram-node node-figma">
-                        <i class="fa-brands fa-figma"></i>
-                    </div>
-                    
-                    <div class="diagram-col-right">
-                        <div class="diagram-node node-html"><i class="fa-brands fa-html5"></i></div>
-                        <div class="diagram-node node-css"><i class="fa-brands fa-css3-alt"></i></div>
-                        <div class="diagram-node node-js"><span class="icon-text text-js">JS</span></div>
-                        <div class="diagram-node node-github"><i class="fa-brands fa-github"></i></div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4 class="stat-number">3+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="stat-number">20+</h4>
+                            <p>Projects Done</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4 class="stat-number">100%</h4>
+                            <p>Satisfaction</p>
+                        </div>
                     </div>
                 </div>
-                <div class="feature-b-bottom">
-                    <h4>Converting</h4>
-                    <p>Converting design files (Figma, XD,<br>Sketch, and PSD) into pixel-perfect.</p>
+                
+                <div class="about-visual">
+                    <div class="about-glass-frame">
+                        <div class="about-abstract-shape primary"></div>
+                        <div class="about-abstract-shape secondary"></div>
+                        <div class="about-photo-placeholder">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work-experience reveal">
+            <h3>Work Experience</h3>
+            <div class="cards-grid">
+                <div class="glass-card">
+                    <div class="card-icon">🌟</div>
+                    <div class="card-content">
+                        <h4>CIB on the Mobile</h4>
+                        <p>Take your client onboard seamlessly by our amazing tool of digital onboard process.</p>
+                        <button class="learn-more">LEARN MORE</button>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <div class="card-icon">💡</div>
+                    <div class="card-content">
+                        <h4>CIB on the Mobile</h4>
+                        <p>Take your client onboard seamlessly by our amazing tool of digital onboard process.</p>
+                        <button class="learn-more">LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- No more .main-container wrapper here -->
+
+     <!-- Features Grid Section -->
+        <section class="features-grid-section reveal">
+            <div class="features-layout">
+                
+                <!-- Card 1: Services -->
+                <div class="feature-b-card">
+                    <div class="feature-b-top col-stack">
+                        <div class="inner-feature-box">
+                            <h5>Meta Tags Optimization<span style="color:var(--text-secondary)">-</span></h5>
+                            <p>Optimizing title tags, meta descriptions, and header tags with relevant keywords helps search engines understand your content and improves click-through rates.</p>
+                        </div>
+                        <div class="inner-feature-box">
+                            <h5>Responsive Design<span style="color:var(--text-secondary)">-</span></h5>
+                            <p>Ensuring the site is mobile-friendly and adapts to all screen sizes, which is a critical factor for SEO and user satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="feature-b-bottom">
+                        <h4>Services</h4>
+                        <p>developing professional responsive websites,<br>Landing pages, and web applications.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Converting -->
+                <div class="feature-b-card">
+                    <div class="feature-b-top feature-diagram">
+                        <svg class="diagram-lines" viewBox="0 0 300 200" preserveAspectRatio="none">
+                            <!-- Path from User to Figma -->
+                            <path d="M 50 100 C 100 100, 100 100, 150 100" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
+                            <!-- Paths from Figma to technologies -->
+                            <path d="M 150 100 C 200 100, 200 40, 250 40" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
+                            <path d="M 150 100 C 200 100, 200 80, 250 80" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
+                            <path d="M 150 100 C 200 100, 200 120, 250 120" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
+                            <path d="M 150 100 C 200 100, 200 160, 250 160" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none" />
+                        </svg>
+                        
+                        <div class="diagram-node node-user">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        
+                        <div class="diagram-node node-figma">
+                            <i class="fa-brands fa-figma"></i>
+                        </div>
+                        
+                        <div class="diagram-col-right">
+                            <div class="diagram-node node-html"><i class="fa-brands fa-html5"></i></div>
+                            <div class="diagram-node node-css"><i class="fa-brands fa-css3-alt"></i></div>
+                            <div class="diagram-node node-js"><span class="icon-text text-js">JS</span></div>
+                            <div class="diagram-node node-github"><i class="fa-brands fa-github"></i></div>
+                        </div>
+                    </div>
+                    <div class="feature-b-bottom">
+                        <h4>Converting</h4>
+                        <p>Converting design files (Figma, XD,<br>Sketch, and PSD) into pixel-perfect.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Clean Code -->
+                <div class="feature-b-card">
+                    <div class="feature-b-top clean-code-scroll">
+                        <!-- Added an extra box to simulate scrolling off-screen items like the image -->
+                        <div class="inner-feature-box faded">
+                            <h5>Use...</h5>
+                            <p>use...</p>
+                        </div>
+                        <div class="inner-feature-box">
+                            <h5>Avoid Hardcoding Values</h5>
+                            <p>Use constants, environment variables, or configuration files to manage</p>
+                        </div>
+                        <div class="inner-feature-box">
+                            <h5>Use Version Control</h5>
+                            <p>Use Git or another version control system to track changes and collaborate effectively.</p>
+                        </div>
+                        <div class="inner-feature-box">
+                            <h5>Use Meaningful Variable Names</h5>
+                            <p>Choose descriptive variable names that clearly</p>
+                        </div>
+                    </div>
+                    <div class="feature-b-bottom">
+                        <h4>Clean Code</h4>
+                        <p>Writing maintainable, efficient, and<br>scalable code following best practices.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="site-footer reveal" id="site-footer">
+            <hr style="border: 1px solid var(--glass-border);">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="/" class="logo footer-logo-custom" aria-label="Orvex Tech home">
+                    <span class="orange-text">Or</span>vex
+                </a>
+                <p class="copyright"> Copyright © 2026 Orvex Tech<br/>
+                    All rights reserved</p>
+                
+                <div class="social-section">
+                    <p class="social-title">FOLLOW US</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Card 3: Clean Code -->
-            <div class="feature-b-card">
-                <div class="feature-b-top clean-code-scroll">
-                    <!-- Added an extra box to simulate scrolling off-screen items like the image -->
-                    <div class="inner-feature-box faded">
-                        <h5>Use...</h5>
-                        <p>use...</p>
-                    </div>
-                    <div class="inner-feature-box">
-                        <h5>Avoid Hardcoding Values</h5>
-                        <p>Use constants, environment variables, or configuration files to manage</p>
-                    </div>
-                    <div class="inner-feature-box">
-                        <h5>Use Version Control</h5>
-                        <p>Use Git or another version control system to track changes and collaborate effectively.</p>
-                    </div>
-                    <div class="inner-feature-box">
-                        <h5>Use Meaningful Variable Names</h5>
-                        <p>Choose descriptive variable names that clearly</p>
-                    </div>
+            <div class="footer-links">
+                <div class="link-col">
+                    <a href="index.html">Home</a>
+                    <a href="pages/contact-us/index.html">Contact Us</a>
+                    <a href="#">Services</a>
+                    <a href="#">About Us</a>
                 </div>
-                <div class="feature-b-bottom">
-                    <h4>Clean Code</h4>
-                    <p>Writing maintainable, efficient, and<br>scalable code following best practices.</p>
+                <div class="link-col">
+                    <a href="#">Software Development</a>
+                    <a href="#">Technology</a>
+                    <a href="#">Web Development</a>
+                    <a href="#">Careers</a>
                 </div>
             </div>
-
         </div>
-    </section>
-
-    <footer class="site-footer reveal" id="site-footer">
-        <hr style="border: 1px solid var(--glass-border);">
-    <div class="footer-content">
-        <div class="footer-brand">
-            <a href="/" class="logo footer-logo-custom" aria-label="Orvex Tech home">
-                <span class="orange-text">Or</span>vex
-            </a>
-            <p class="copyright"> Copyright © 2026 Orvex Tech<br/>
-                All rights reserved</p>
-            
-            <div class="social-section">
-                <p class="social-title">FOLLOW US</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-links">
-            <div class="link-col">
-                <a href="index.html">Home</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="#">Services</a>
-                <a href="#">About Us</a>
-            </div>
-            <div class="link-col">
-                <a href="#">Software Development</a>
-                <a href="#">Technology</a>
-                <a href="#">Web Development</a>
-                <a href="#">Careers</a>
-            </div>
-        </div>
-    </div>
-    </footer>
+        </footer>
 
     <script src="script.js"></script>
 </body>

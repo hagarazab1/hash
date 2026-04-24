@@ -57,25 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- Scroll Reveal Animation Logic ---
     const reveals = document.querySelectorAll('.reveal');
-    const revealOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.intersectionRatio >= 0.15) {
                 entry.target.classList.add('active');
-            } else {
+            } else if (entry.intersectionRatio < 0.05) {
                 entry.target.classList.remove('active');
             }
         });
-    }, revealOptions);
+    }, { threshold: [0.05, 0.15], rootMargin: "0px 0px -50px 0px" });
 
     reveals.forEach(reveal => {
         revealOnScroll.observe(reveal);
     });
-
     // --- Portfolio Filtering Logic ---
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
@@ -105,6 +99,196 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
+
+    // --- Hybrid Window-Based Scroll Controller ---
+    class FullPageScrollController {
+        constructor() {
+            // Sections that participate in the 'glide' slider
+            this.snapSections = document.querySelectorAll('.hero, .services-section, .help-section, .tech-stack-section, .recent-projects-section, .about-section, .work-experience');
+            if (this.snapSections.length === 0) return;
+            
+            this.currentIndex = 0;
+            this.isAnimating = false;
+            this.touchStartY = 0;
+            this.duration = 1000; // 1 second glide
+
+            this.init();
+        }
+
+        init() {
+            // Handle Mouse Wheel
+            window.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+
+            // Handle Keyboard
+            window.addEventListener('keydown', (e) => this.handleKeydown(e));
+
+            // Handle Touch
+            window.addEventListener('touchstart', (e) => this.touchStartY = e.touches[0].clientY);
+            window.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: false });
+
+            // Sync index on manual scroll (scrollbar dragging)
+            window.addEventListener('scroll', () => {
+                if (this.isAnimating) return;
+                const scrollPos = window.scrollY;
+                let closestIndex = 0;
+                let minDiff = Infinity;
+
+                this.snapSections.forEach((section, index) => {
+                    const diff = Math.abs(scrollPos - section.offsetTop);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closestIndex = index;
+                    }
+                });
+                this.currentIndex = closestIndex;
+            });
+        }
+
+        handleWheel(e) {
+            if (this.isAnimating) {
+                e.preventDefault();
+                return;
+            }
+
+            const currentSection = this.snapSections[this.currentIndex];
+            const nextSection = this.snapSections[this.currentIndex + 1];
+            const prevSection = this.snapSections[this.currentIndex - 1];
+
+            if (e.deltaY > 0) {
+                // Scroll Down
+                if (nextSection) {
+                    const distanceToNext = nextSection.offsetTop - window.scrollY;
+                    // If we are at the top of a slide and the next one is close (adjacent slider sections)
+                    if (distanceToNext > 50 && distanceToNext < window.innerHeight * 1.1) {
+                        e.preventDefault();
+                        this.next();
+                        return;
+                    }
+                }
+            } else if (e.deltaY < 0) {
+                // Scroll Up
+                if (prevSection) {
+                    const distanceToPrev = window.scrollY - prevSection.offsetTop;
+                    // If we are near a snap point and scrolling up towards it
+                    if (distanceToPrev > 50 && distanceToPrev < window.innerHeight * 1.1) {
+                        e.preventDefault();
+                        this.prev();
+                        return;
+                    }
+                }
+            }
+        }
+
+        handleTouchMove(e) {
+            if (this.isAnimating) {
+                e.preventDefault();
+                return;
+            }
+
+            const touchEndY = e.touches[0].clientY;
+            const deltaY = this.touchStartY - touchEndY;
+
+            if (Math.abs(deltaY) > 50) {
+                const nextSection = this.snapSections[this.currentIndex + 1];
+                const prevSection = this.snapSections[this.currentIndex - 1];
+
+                if (deltaY > 0) {
+                    // Swipe Down (Scroll Down)
+                    if (nextSection) {
+                        const distanceToNext = nextSection.offsetTop - window.scrollY;
+                        if (distanceToNext > 0 && distanceToNext < window.innerHeight * 1.2) {
+                            e.preventDefault();
+                            this.next();
+                        }
+                    }
+                } else {
+                    // Swipe Up (Scroll Up)
+                    if (prevSection) {
+                        const distanceToPrev = window.scrollY - prevSection.offsetTop;
+                        if (distanceToPrev > 0 && distanceToPrev < window.innerHeight * 1.2) {
+                            e.preventDefault();
+                            this.prev();
+                        }
+                    }
+                }
+                this.touchStartY = touchEndY;
+            }
+        }
+
+        handleKeydown(e) {
+            if (this.isAnimating) return;
+
+            const nextSection = this.snapSections[this.currentIndex + 1];
+            const prevSection = this.snapSections[this.currentIndex - 1];
+
+            if (e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+                if (nextSection) {
+                    const distanceToNext = nextSection.offsetTop - window.scrollY;
+                    if (distanceToNext > 0 && distanceToNext < window.innerHeight * 1.2) {
+                        e.preventDefault();
+                        this.next();
+                    }
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                if (prevSection) {
+                    const distanceToPrev = window.scrollY - prevSection.offsetTop;
+                    if (distanceToPrev > 0 && distanceToPrev < window.innerHeight * 1.2) {
+                        e.preventDefault();
+                        this.prev();
+                    }
+                }
+            }
+        }
+
+        next() {
+            if (this.currentIndex < this.snapSections.length - 1) {
+                this.currentIndex++;
+                this.scrollToIndex(this.currentIndex);
+            }
+        }
+
+        prev() {
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+                this.scrollToIndex(this.currentIndex);
+            }
+        }
+
+        scrollToIndex(index, duration = this.duration) {
+            this.isAnimating = true;
+            const targetY = this.snapSections[index].offsetTop;
+            const startY = window.scrollY;
+            const distance = targetY - startY;
+            let startTime = null;
+
+            const easeInOutQuad = (t, b, c, d) => {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            };
+
+            const animation = (currentTime) => {
+                if (!startTime) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = easeInOutQuad(timeElapsed, startY, distance, duration);
+                
+                window.scrollTo(0, run);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                } else {
+                    window.scrollTo(0, targetY);
+                    this.isAnimating = false;
+                }
+            };
+
+            requestAnimationFrame(animation);
+        }
+    }
+
+    // Initialize the controller
+    new FullPageScrollController();
 });
 
 // --- Footer: Dark Cosmic Flowing Fabric Animation ---
